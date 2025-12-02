@@ -89,6 +89,8 @@ There is a debug.py script available in the project that will use your .env file
 python debug.py
 ```
 
+For more detailed troubleshooting tips, view the [TROUBLESHOOTING](TROUBLESHOOTING.md) documentation.
+
 ### NOTE
 `debug.py` is not included in the docker container, the Dockerfile would need to get modified to include `debug.py` within the container image. If you do you can run:
 ```bash
