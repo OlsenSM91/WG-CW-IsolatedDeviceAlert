@@ -84,4 +84,4 @@ docker run --rm \
 - `docker-compose.yml` – Compose service wiring with environment loading and persistent state volume.
 
 ## License
-This project is licensed under the terms of the MIT License. See [LICENSE](LICENSE) for details.
+This project is licensed under the terms of The Unlicense License. See [LICENSE](LICENSE) for details.
