@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  wg-epdr-cw-watcher:
+    build: .
+    container_name: wg-epdr-cw-watcher
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
