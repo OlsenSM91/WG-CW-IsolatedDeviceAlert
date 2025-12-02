@@ -83,5 +83,36 @@ docker run --rm \
 - `Dockerfile` – Container image definition targeting Python 3.12-slim.
 - `docker-compose.yml` – Compose service wiring with environment loading and persistent state volume.
 
+## Troubleshooting
+There is a debug.py script available in the project that will use your .env file to test variables as well as pull board IDs and status IDs so you can include them in the `.env` file. To test run:
+```bash
+python debug.py
+```
+
+### NOTE
+`debug.py` is not included in the docker container, the Dockerfile would need to get modified to include `debug.py` within the container image. If you do you can run:
+```bash
+docker compose run --rm wg-epdr-cw-watcher python debug.py
+```
+
+### Logging tips
+
+Follow logs live:
+```bash
+docker logs -f wg-epdr-cw-watcher
+```
+
+With timestamps:
+```bash
+docker logs -f --timestamps wg-epdr-cw-watcher
+```
+
+Last N lines:
+```bash
+docker logs --tail=200 wg-epdr-cw-watcher
+```
+
+The debug script will run all of the necessary checks to ensure that your `.env` file is set up correctly and has everything it needs to behave correctly.
+
 ## License
 This project is licensed under the terms of The Unlicense License. See [LICENSE](LICENSE) for details.
